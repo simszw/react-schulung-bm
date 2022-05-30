@@ -1,7 +1,9 @@
+import Hero from "./Hero";
+
 function Content() {
   return (
     <div className="content">
-      <p>Hero</p>
+      <Hero />
 
       <div className="container">
         <div className="card-listing">
