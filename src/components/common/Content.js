@@ -15,7 +15,7 @@ function Content() {
             <Card />
           </div>
           <div className="card-listing__actions">
-            <Button />
+            <Button size="large">Add Card</Button>
           </div>
         </div>
       </div>

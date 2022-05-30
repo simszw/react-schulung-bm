@@ -14,7 +14,7 @@ function Card() {
         />
       </div>
       <div className="card__actions">
-        <Button />
+        <Button>Update Image</Button>
       </div>
     </div>
   );

@@ -8,7 +8,9 @@ function Hero() {
         Click the button to count the clicks.
       </div>
       <div className="hero__button">
-        <Button />
+        <Button size="large" variant="dark">
+          Click me
+        </Button>
       </div>
     </div>
   );
