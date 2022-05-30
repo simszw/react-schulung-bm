@@ -7,7 +7,7 @@ function Header() {
     <header style={{ display: "flex", justifyContent: "space-between" }}>
       <Logo />
       <Navigation />
-      <Button />
+      <Button>Login</Button>
     </header>
   );
 }

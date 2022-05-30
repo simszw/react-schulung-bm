@@ -1,11 +1,12 @@
 import Button from "./Button";
 
-function Card() {
+function Card(props) {
+  const { buttonText, title, description } = props;
   return (
     <div className="card">
       <div className="card__header">
-        <div className="card__title">Title</div>
-        <div className="card__description">Description</div>
+        <div className="card__title">{title}</div>
+        <div className="card__description">{description}</div>
       </div>
       <div className="imageContainer">
         <img
@@ -14,7 +15,7 @@ function Card() {
         />
       </div>
       <div className="card__actions">
-        <Button />
+        <Button>{buttonText}</Button>
       </div>
     </div>
   );

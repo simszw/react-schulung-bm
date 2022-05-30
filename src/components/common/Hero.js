@@ -1,14 +1,15 @@
 import Button from "../ui/Button";
 
-function Hero() {
+function Hero(props) {
+  const { title, description, buttonText } = props;
   return (
     <div className="hero">
-      <div className="hero__title">Click Counter</div>
-      <div className="hero__description">
-        Click the button to count the clicks.
-      </div>
+      <div className="hero__title">{title}</div>
+      <div className="hero__description">{description}</div>
       <div className="hero__button">
-        <Button />
+        <Button size="large" variant="dark">
+          {buttonText}
+        </Button>
       </div>
     </div>
   );
