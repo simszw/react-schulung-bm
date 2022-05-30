@@ -274,3 +274,11 @@ footer {
 .user-email {
   font-size: 14px;
 }
+
+/* USER WELCOME */
+.welcome-user {
+  font-size: 22px;
+  font-weight: bold;
+  color: #2979ff;
+  margin-bottom: 30px;
+}

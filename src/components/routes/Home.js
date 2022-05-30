@@ -1,8 +1,9 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { getRandomImageUrl } from "../../utils/ImageHelper";
 import Hero from "../common/Hero";
 import Card from "../ui/Card";
 import Button from "../ui/Button";
+import { userContext } from "../../context/userContext";
 
 const MAX_CARDS = 6;
 
@@ -32,6 +33,8 @@ const INITIAL_CARDS = [
 
 function Home() {
   const [cards, setCards] = useState(INITIAL_CARDS);
+  const { user, setAuthenticated } = useContext(userContext);
+  const { username, email, authenticated } = user;
 
   const addCard = () => {
     if (cards.length === MAX_CARDS) {
@@ -65,6 +68,9 @@ function Home() {
       />
 
       <div className="container">
+        {authenticated && (
+          <div className="welcome-user">Welcome, {username}!</div>
+        )}
         <div className="card-listing">
           <div className="card-listing__info">
             {cards.length} {cards.length === 1 ? "image" : "images"} found
