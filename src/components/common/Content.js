@@ -5,7 +5,11 @@ import Hero from "./Hero";
 function Content() {
   return (
     <div className="content">
-      <Hero />
+      <Hero
+        title="Click Counter"
+        description="Click the button to count the clicks"
+        buttonText="Click me!"
+      />
 
       <div className="container">
         <div className="card-listing">
