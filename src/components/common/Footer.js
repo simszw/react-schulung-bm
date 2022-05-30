@@ -1,9 +1,11 @@
+import Logo from "./Logo";
+
 function Footer() {
   return (
     <footer className="footer">
       <div className="container grid grid--columns-3">
         <div className="x">
-          <p>Logo</p>
+          <Logo />
           <ul className="footer__list">
             <li>
               <a href="/">Home</a>
