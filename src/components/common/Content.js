@@ -61,6 +61,9 @@ function Content() {
 
       <div className="container">
         <div className="card-listing">
+          <div className="card-listing__info">
+            {cards.length} {cards.length === 1 ? "image" : "images"} found
+          </div>
           <div className="cards grid grid--columns-3">
             {cards.map((card, idx) => (
               <Card
