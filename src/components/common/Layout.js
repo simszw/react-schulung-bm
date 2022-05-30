@@ -1,7 +1,9 @@
+import Header from "./Header";
+
 function Layout() {
   return (
     <div>
-      <p>Header</p>
+      <Header />
       <p>Content</p>
       <p>Footer</p>
     </div>
