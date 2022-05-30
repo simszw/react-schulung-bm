@@ -18,19 +18,28 @@ function Navigation() {
         </Link>
       </li>
       <li>
-        <a className="nav__item" href="/">
+        <Link
+          to="/about"
+          className={`nav__item ${isActive("/about") && "nav__item--active"}`}
+        >
           About
-        </a>
+        </Link>
       </li>
       <li>
-        <a className="nav__item" href="/">
+        <Link
+          to="/blog"
+          className={`nav__item ${isActive("/blog") && "nav__item--active"}`}
+        >
           Blog
-        </a>
+        </Link>
       </li>
       <li>
-        <a className="nav__item" href="/">
+        <Link
+          to="/contact"
+          className={`nav__item ${isActive("/contact") && "nav__item--active"}`}
+        >
           Contact
-        </a>
+        </Link>
       </li>
     </ul>
   );
