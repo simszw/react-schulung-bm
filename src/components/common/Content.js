@@ -14,9 +14,21 @@ function Content() {
       <div className="container">
         <div className="card-listing">
           <div className="cards grid grid--columns-3">
-            <Card />
-            <Card />
-            <Card />
+            <Card
+              buttonText="Update Image"
+              title="Image 1"
+              description="Lorem Ipsum Dolor Sit Amet."
+            />
+            <Card
+              buttonText="Update Image"
+              title="Image 2"
+              description="Lorem Ipsum Dolor Sit Amet."
+            />
+            <Card
+              buttonText="Update Image"
+              title="Image 3"
+              description="Lorem Ipsum Dolor Sit Amet."
+            />
           </div>
           <div className="card-listing__actions">
             <Button size="large">Add Card</Button>
