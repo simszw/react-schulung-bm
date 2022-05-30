@@ -1,10 +1,21 @@
+import { Link, useLocation } from "react-router-dom";
+
 function Navigation() {
+  const location = useLocation();
+
+  const isActive = (pathname) => {
+    return location.pathname === pathname;
+  };
+
   return (
     <ul className="nav">
       <li>
-        <a className="nav__item nav__item--active" href="/">
+        <Link
+          to="/"
+          className={`nav__item ${isActive("/") && "nav__item--active"}`}
+        >
           Home
-        </a>
+        </Link>
       </li>
       <li>
         <a className="nav__item" href="/">
