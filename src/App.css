@@ -1,38 +1,276 @@
-.App {
-  text-align: center;
+.nav-link {
+  padding: 15px 10px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.container {
+  width: 1020px;
+  margin: 0 auto;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  background: #ffffff;
+  padding: 10px 20px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.header .navigation {
+  flex: 1;
+}
+
+/* Card */
+.card {
+  padding: 15px;
+  border-radius: 4px;
+  background-color: white;
+  box-shadow: rgb(33 33 52 / 10%) 0px 1px 4px;
+}
+
+.card .imageContainer {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin-bottom: 6px;
+}
+
+.card__header {
+  margin-bottom: 20px;
+}
+
+.card__title {
+  color: #192234;
+  font-weight: bold;
+  font-size: 22px;
+}
+
+.card__description {
+  font-size: 14px;
+  color: #304366;
+}
+
+.card__actions {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+/* Button */
+.button {
+  font-size: 14px;
+  text-transform: uppercase;
+  font-weight: 600;
+  padding: 8px 16px;
+  background: #2979ff;
+  color: white;
+  width: fit-content;
+  height: fit-content;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: all 0.15s ease-in-out;
+  user-select: none;
+}
+
+.button--large {
+  padding: 10px 20px;
+  font-size: 16px;
+}
+
+.button:hover {
+  background: #215ec5;
+}
+
+.button--dark {
+  background: #304366;
+}
+
+.button--dark:hover {
+  background: #192234;
+}
+
+.button--danger {
+  background: #e91e63;
+}
+
+.button--danger:hover {
+  background: #cd1c58;
+}
+
+/* Hero Banner */
+.hero {
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+  background: linear-gradient(335deg, #3079ff, #30bcff);
+  min-height: 300px;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.hero__title {
+  font-weight: bold;
+  font-size: 40px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.hero__description {
+  font-size: 18px;
+}
+
+.hero__button {
+  display: flex;
+  margin-top: 16px;
+}
+
+/* Navigation */
+.nav li {
+  margin: 0 5px;
+}
+
+.nav__item {
+  color: black;
+  padding: 10px;
+  text-decoration: none;
+  border-radius: 3px;
+  transition: all 0.15s ease-in-out;
+}
+
+.nav__item--active {
+  background: #f6f6f9;
+}
+
+.nav__item:hover {
+  background: #f6f6f9;
+}
+
+/* LOGO */
+.logo-link {
+  text-decoration: none;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo__image {
+  max-width: 40px;
+  height: auto;
+  margin-right: 10px;
+}
+
+.logo__name {
+  color: #2979ff;
+  font-weight: bold;
+}
+
+/* FOOTER */
+footer {
+  color: white;
+  background: #192234;
+}
+
+.footer .container {
+  padding: 50px 0;
+}
+
+.footer .logo {
+  margin-bottom: 30px;
+}
+
+.footer__list li {
+  display: block;
+}
+
+.footer__list li a {
+  color: white;
+  text-decoration: none;
+}
+
+.footer__list li a:hover {
+  text-decoration: underline;
+}
+
+/* GRID */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-column-gap: 20px;
+  grid-row-gap: 20px;
+}
+
+.grid--no-spacing {
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+}
+
+.grid--columns-4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.grid--columns-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.grid--columns-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+/* CONTENT */
+.content {
+  min-height: 600px;
+}
+
+.content .container {
+  min-height: 300px;
+  padding: 50px 0 120px 0;
+}
+
+/* CARD LISTING */
+.card-listing {
+}
+
+.card-listing__actions {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  margin-top: 30px;
+}
+
+.card-listing__info {
+  margin-bottom: 16px;
+  font-size: 16px;
+  color: #878787;
+  font-weight: 500;
+}
+
+/* HELPER */
+.mr-10 {
+  margin-right: 10px;
+}
+
+.ml-10 {
+  margin-left: 10px;
+}
+
+/* USER CONTAINER */
+.user-container {
+  display: flex;
+  align-items: center;
+}
+
+.user-details {
+  margin-right: 16px;
+  text-align: right;
+}
+
+.user-name {
+  line-height: 16px;
+  font-weight: 500;
+  color: #2979ff;
+}
+
+.user-email {
+  font-size: 14px;
 }
