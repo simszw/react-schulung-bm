@@ -1,0 +1,619 @@
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta
+      name="description"
+      content="Web site created using create-react-app"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link rel="apple-touch-icon" href="/logo192.png" />
+    <!--
+      manifest.json provides metadata used when your web app is installed on a
+      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
+    -->
+    <link rel="manifest" href="/manifest.json" />
+    <!--
+      Notice the use of  in the tags above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
+
+      Unlike "/favicon.ico" or "favicon.ico", "/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+    -->
+    <title>React App</title>
+    <script defer="" src="/static/js/bundle.js"></script>
+    <style>
+      body {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        font-family: "Poppins", sans-serif;
+        background-color: #f6f6f9;
+      }
+
+      img {
+        width: 100%;
+      }
+
+      ul {
+        list-style: none;
+        padding: 0;
+      }
+
+      li {
+        display: inline-block;
+      }
+
+      /*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uL3NyYy9pbmRleC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSxXQUFXO0VBQ1gsWUFBWTtFQUNaLFNBQVM7RUFDVCxVQUFVO0VBQ1Ysa0NBQWtDO0VBQ2xDLHlCQUF5QjtBQUMzQjs7QUFFQTtFQUNFLFdBQVc7QUFDYjs7QUFFQTtFQUNFLGdCQUFnQjtFQUNoQixVQUFVO0FBQ1o7O0FBRUE7RUFDRSxxQkFBcUI7QUFDdkIiLCJzb3VyY2VzQ29udGVudCI6WyJib2R5IHtcbiAgd2lkdGg6IDEwMCU7XG4gIGhlaWdodDogMTAwJTtcbiAgbWFyZ2luOiAwO1xuICBwYWRkaW5nOiAwO1xuICBmb250LWZhbWlseTogXCJQb3BwaW5zXCIsIHNhbnMtc2VyaWY7XG4gIGJhY2tncm91bmQtY29sb3I6ICNmNmY2Zjk7XG59XG5cbmltZyB7XG4gIHdpZHRoOiAxMDAlO1xufVxuXG51bCB7XG4gIGxpc3Qtc3R5bGU6IG5vbmU7XG4gIHBhZGRpbmc6IDA7XG59XG5cbmxpIHtcbiAgZGlzcGxheTogaW5saW5lLWJsb2NrO1xufVxuIl0sInNvdXJjZVJvb3QiOiIifQ== */
+    </style>
+    <style>
+      .nav-link {
+        padding: 15px 10px;
+      }
+
+      .container {
+        width: 1020px;
+        margin: 0 auto;
+      }
+
+      header {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        background: #ffffff;
+        padding: 10px 20px;
+      }
+
+      .header .navigation {
+        flex: 1 1;
+      }
+
+      /* Card */
+      .card {
+        padding: 15px;
+        border-radius: 4px;
+        background-color: white;
+        box-shadow: rgb(33 33 52 / 10%) 0px 1px 4px;
+      }
+
+      .card .imageContainer {
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        margin-bottom: 6px;
+      }
+
+      .card__header {
+        margin-bottom: 20px;
+      }
+
+      .card__title {
+        color: #192234;
+        font-weight: bold;
+        font-size: 22px;
+      }
+
+      .card__description {
+        font-size: 14px;
+        color: #304366;
+      }
+
+      .card__actions {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+      }
+
+      /* Button */
+      .button {
+        font-size: 14px;
+        text-transform: uppercase;
+        font-weight: 600;
+        padding: 8px 16px;
+        background: #2979ff;
+        color: white;
+        width: -moz-fit-content;
+        width: fit-content;
+        height: -moz-fit-content;
+        height: fit-content;
+        border-radius: 3px;
+        cursor: pointer;
+        transition: all 0.15s ease-in-out;
+        -webkit-user-select: none;
+        user-select: none;
+      }
+
+      .button--large {
+        padding: 10px 20px;
+        font-size: 16px;
+      }
+
+      .button:hover {
+        background: #215ec5;
+      }
+
+      .button--dark {
+        background: #304366;
+      }
+
+      .button--dark:hover {
+        background: #192234;
+      }
+
+      .button--danger {
+        background: #e91e63;
+      }
+
+      .button--danger:hover {
+        background: #cd1c58;
+      }
+
+      /* Hero Banner */
+      .hero {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background: linear-gradient(335deg, #3079ff, #30bcff);
+        min-height: 300px;
+        color: white;
+      }
+
+      .hero__title {
+        font-weight: bold;
+        font-size: 40px;
+      }
+
+      .hero__description {
+        font-size: 18px;
+      }
+
+      .hero__button {
+        display: flex;
+        margin-top: 16px;
+      }
+
+      /* Navigation */
+      .nav li {
+        margin: 0 5px;
+      }
+
+      .nav__item {
+        color: black;
+        padding: 10px;
+        text-decoration: none;
+        border-radius: 3px;
+        transition: all 0.15s ease-in-out;
+      }
+
+      .nav__item--active {
+        background: #f6f6f9;
+      }
+
+      .nav__item:hover {
+        background: #f6f6f9;
+      }
+
+      /* LOGO */
+      .logo-link {
+        text-decoration: none;
+      }
+
+      .logo {
+        display: flex;
+        align-items: center;
+      }
+
+      .logo__image {
+        max-width: 40px;
+        height: auto;
+        margin-right: 10px;
+      }
+
+      .logo__name {
+        color: #2979ff;
+        font-weight: bold;
+      }
+
+      /* FOOTER */
+      footer {
+        color: white;
+        background: #192234;
+      }
+
+      .footer .container {
+        padding: 50px 0;
+      }
+
+      .footer .logo {
+        margin-bottom: 30px;
+      }
+
+      .footer__list li {
+        display: block;
+      }
+
+      .footer__list li a {
+        color: white;
+        text-decoration: none;
+      }
+
+      .footer__list li a:hover {
+        text-decoration: underline;
+      }
+
+      /* GRID */
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-column-gap: 20px;
+        grid-row-gap: 20px;
+      }
+
+      .grid--no-spacing {
+        grid-column-gap: 0px;
+        grid-row-gap: 0px;
+      }
+
+      .grid--columns-4 {
+        grid-template-columns: repeat(4, 1fr);
+      }
+
+      .grid--columns-3 {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .grid--columns-2 {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      /* CONTENT */
+      .content {
+        min-height: 600px;
+      }
+
+      .content .container {
+        min-height: 300px;
+        padding: 50px 0 120px 0;
+      }
+
+      /* CARD LISTING */
+      .card-listing {
+      }
+
+      .card-listing__actions {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        margin-top: 30px;
+      }
+
+      .card-listing__info {
+        margin-bottom: 16px;
+        font-size: 16px;
+        color: #878787;
+        font-weight: 500;
+      }
+
+      /* HELPER */
+      .mr-10 {
+        margin-right: 10px;
+      }
+
+      .ml-10 {
+        margin-left: 10px;
+      }
+
+      /* USER CONTAINER */
+      .user-container {
+        display: flex;
+        align-items: center;
+      }
+
+      .user-details {
+        margin-right: 16px;
+        text-align: right;
+      }
+
+      .user-name {
+        line-height: 16px;
+        font-weight: 500;
+        color: #2979ff;
+      }
+
+      .user-email {
+        font-size: 14px;
+      }
+
+      /* USER WELCOME */
+      .welcome-user {
+        font-size: 22px;
+        font-weight: bold;
+        color: #2979ff;
+        margin-bottom: 30px;
+      }
+
+      /*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uL3NyYy9BcHAuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0Usa0JBQWtCO0FBQ3BCOztBQUVBO0VBQ0UsYUFBYTtFQUNiLGNBQWM7QUFDaEI7O0FBRUE7RUFDRSxhQUFhO0VBQ2IsbUJBQW1CO0VBQ25CLG1CQUFtQjtFQUNuQiw4QkFBOEI7RUFDOUIsbUJBQW1CO0VBQ25CLGtCQUFrQjtBQUNwQjs7QUFFQTtFQUNFLFNBQU87QUFDVDs7QUFFQSxTQUFTO0FBQ1Q7RUFDRSxhQUFhO0VBQ2Isa0JBQWtCO0VBQ2xCLHVCQUF1QjtFQUN2QiwyQ0FBMkM7QUFDN0M7O0FBRUE7RUFDRSwyQkFBMkI7RUFDM0Isc0JBQXNCO0VBQ3RCLDRCQUE0QjtFQUM1QixrQkFBa0I7QUFDcEI7O0FBRUE7RUFDRSxtQkFBbUI7QUFDckI7O0FBRUE7RUFDRSxjQUFjO0VBQ2QsaUJBQWlCO0VBQ2pCLGVBQWU7QUFDakI7O0FBRUE7RUFDRSxlQUFlO0VBQ2YsY0FBYztBQUNoQjs7QUFFQTtFQUNFLGFBQWE7RUFDYixtQkFBbUI7RUFDbkIsZUFBZTtFQUNmLHlCQUF5QjtBQUMzQjs7QUFFQSxXQUFXO0FBQ1g7RUFDRSxlQUFlO0VBQ2YseUJBQXlCO0VBQ3pCLGdCQUFnQjtFQUNoQixpQkFBaUI7RUFDakIsbUJBQW1CO0VBQ25CLFlBQVk7RUFDWix1QkFBa0I7RUFBbEIsa0JBQWtCO0VBQ2xCLHdCQUFtQjtFQUFuQixtQkFBbUI7RUFDbkIsa0JBQWtCO0VBQ2xCLGVBQWU7RUFDZixpQ0FBaUM7RUFDakMseUJBQWlCO1VBQWpCLGlCQUFpQjtBQUNuQjs7QUFFQTtFQUNFLGtCQUFrQjtFQUNsQixlQUFlO0FBQ2pCOztBQUVBO0VBQ0UsbUJBQW1CO0FBQ3JCOztBQUVBO0VBQ0UsbUJBQW1CO0FBQ3JCOztBQUVBO0VBQ0UsbUJBQW1CO0FBQ3JCOztBQUVBO0VBQ0UsbUJBQW1CO0FBQ3JCOztBQUVBO0VBQ0UsbUJBQW1CO0FBQ3JCOztBQUVBLGdCQUFnQjtBQUNoQjtFQUNFLGFBQWE7RUFDYixzQkFBc0I7RUFDdEIsdUJBQXVCO0VBQ3ZCLG1CQUFtQjtFQUNuQixxREFBcUQ7RUFDckQsaUJBQWlCO0VBQ2pCLFlBQVk7QUFDZDs7QUFFQTtFQUNFLGlCQUFpQjtFQUNqQixlQUFlO0FBQ2pCOztBQUVBO0VBQ0UsZUFBZTtBQUNqQjs7QUFFQTtFQUNFLGFBQWE7RUFDYixnQkFBZ0I7QUFDbEI7O0FBRUEsZUFBZTtBQUNmO0VBQ0UsYUFBYTtBQUNmOztBQUVBO0VBQ0UsWUFBWTtFQUNaLGFBQWE7RUFDYixxQkFBcUI7RUFDckIsa0JBQWtCO0VBQ2xCLGlDQUFpQztBQUNuQzs7QUFFQTtFQUNFLG1CQUFtQjtBQUNyQjs7QUFFQTtFQUNFLG1CQUFtQjtBQUNyQjs7QUFFQSxTQUFTO0FBQ1Q7RUFDRSxxQkFBcUI7QUFDdkI7O0FBRUE7RUFDRSxhQUFhO0VBQ2IsbUJBQW1CO0FBQ3JCOztBQUVBO0VBQ0UsZUFBZTtFQUNmLFlBQVk7RUFDWixrQkFBa0I7QUFDcEI7O0FBRUE7RUFDRSxjQUFjO0VBQ2QsaUJBQWlCO0FBQ25COztBQUVBLFdBQVc7QUFDWDtFQUNFLFlBQVk7RUFDWixtQkFBbUI7QUFDckI7O0FBRUE7RUFDRSxlQUFlO0FBQ2pCOztBQUVBO0VBQ0UsbUJBQW1CO0FBQ3JCOztBQUVBO0VBQ0UsY0FBYztBQUNoQjs7QUFFQTtFQUNFLFlBQVk7RUFDWixxQkFBcUI7QUFDdkI7O0FBRUE7RUFDRSwwQkFBMEI7QUFDNUI7O0FBRUEsU0FBUztBQUNUO0VBQ0UsYUFBYTtFQUNiLHFDQUFxQztFQUNyQyxxQkFBcUI7RUFDckIsa0JBQWtCO0FBQ3BCOztBQUVBO0VBQ0Usb0JBQW9CO0VBQ3BCLGlCQUFpQjtBQUNuQjs7QUFFQTtFQUNFLHFDQUFxQztBQUN2Qzs7QUFFQTtFQUNFLHFDQUFxQztBQUN2Qzs7QUFFQTtFQUNFLHFDQUFxQztBQUN2Qzs7QUFFQSxZQUFZO0FBQ1o7RUFDRSxpQkFBaUI7QUFDbkI7O0FBRUE7RUFDRSxpQkFBaUI7RUFDakIsdUJBQXVCO0FBQ3pCOztBQUVBLGlCQUFpQjtBQUNqQjtBQUNBOztBQUVBO0VBQ0UsYUFBYTtFQUNiLG1CQUFtQjtFQUNuQix5QkFBeUI7RUFDekIsZ0JBQWdCO0FBQ2xCOztBQUVBO0VBQ0UsbUJBQW1CO0VBQ25CLGVBQWU7RUFDZixjQUFjO0VBQ2QsZ0JBQWdCO0FBQ2xCOztBQUVBLFdBQVc7QUFDWDtFQUNFLGtCQUFrQjtBQUNwQjs7QUFFQTtFQUNFLGlCQUFpQjtBQUNuQjs7QUFFQSxtQkFBbUI7QUFDbkI7RUFDRSxhQUFhO0VBQ2IsbUJBQW1CO0FBQ3JCOztBQUVBO0VBQ0Usa0JBQWtCO0VBQ2xCLGlCQUFpQjtBQUNuQjs7QUFFQTtFQUNFLGlCQUFpQjtFQUNqQixnQkFBZ0I7RUFDaEIsY0FBYztBQUNoQjs7QUFFQTtFQUNFLGVBQWU7QUFDakI7O0FBRUEsaUJBQWlCO0FBQ2pCO0VBQ0UsZUFBZTtFQUNmLGlCQUFpQjtFQUNqQixjQUFjO0VBQ2QsbUJBQW1CO0FBQ3JCIiwic291cmNlc0NvbnRlbnQiOlsiLm5hdi1saW5rIHtcbiAgcGFkZGluZzogMTVweCAxMHB4O1xufVxuXG4uY29udGFpbmVyIHtcbiAgd2lkdGg6IDEwMjBweDtcbiAgbWFyZ2luOiAwIGF1dG87XG59XG5cbmhlYWRlciB7XG4gIGRpc3BsYXk6IGZsZXg7XG4gIGZsZXgtZGlyZWN0aW9uOiByb3c7XG4gIGFsaWduLWl0ZW1zOiBjZW50ZXI7XG4gIGp1c3RpZnktY29udGVudDogc3BhY2UtYmV0d2VlbjtcbiAgYmFja2dyb3VuZDogI2ZmZmZmZjtcbiAgcGFkZGluZzogMTBweCAyMHB4O1xufVxuXG4uaGVhZGVyIC5uYXZpZ2F0aW9uIHtcbiAgZmxleDogMTtcbn1cblxuLyogQ2FyZCAqL1xuLmNhcmQge1xuICBwYWRkaW5nOiAxNXB4O1xuICBib3JkZXItcmFkaXVzOiA0cHg7XG4gIGJhY2tncm91bmQtY29sb3I6IHdoaXRlO1xuICBib3gtc2hhZG93OiByZ2IoMzMgMzMgNTIgLyAxMCUpIDBweCAxcHggNHB4O1xufVxuXG4uY2FyZCAuaW1hZ2VDb250YWluZXIge1xuICBiYWNrZ3JvdW5kLXBvc2l0aW9uOiBjZW50ZXI7XG4gIGJhY2tncm91bmQtc2l6ZTogY292ZXI7XG4gIGJhY2tncm91bmQtcmVwZWF0OiBuby1yZXBlYXQ7XG4gIG1hcmdpbi1ib3R0b206IDZweDtcbn1cblxuLmNhcmRfX2hlYWRlciB7XG4gIG1hcmdpbi1ib3R0b206IDIwcHg7XG59XG5cbi5jYXJkX190aXRsZSB7XG4gIGNvbG9yOiAjMTkyMjM0O1xuICBmb250LXdlaWdodDogYm9sZDtcbiAgZm9udC1zaXplOiAyMnB4O1xufVxuXG4uY2FyZF9fZGVzY3JpcHRpb24ge1xuICBmb250LXNpemU6IDE0cHg7XG4gIGNvbG9yOiAjMzA0MzY2O1xufVxuXG4uY2FyZF9fYWN0aW9ucyB7XG4gIGRpc3BsYXk6IGZsZXg7XG4gIGZsZXgtZGlyZWN0aW9uOiByb3c7XG4gIGZsZXgtd3JhcDogd3JhcDtcbiAganVzdGlmeS1jb250ZW50OiBmbGV4LWVuZDtcbn1cblxuLyogQnV0dG9uICovXG4uYnV0dG9uIHtcbiAgZm9udC1zaXplOiAxNHB4O1xuICB0ZXh0LXRyYW5zZm9ybTogdXBwZXJjYXNlO1xuICBmb250LXdlaWdodDogNjAwO1xuICBwYWRkaW5nOiA4cHggMTZweDtcbiAgYmFja2dyb3VuZDogIzI5NzlmZjtcbiAgY29sb3I6IHdoaXRlO1xuICB3aWR0aDogZml0LWNvbnRlbnQ7XG4gIGhlaWdodDogZml0LWNvbnRlbnQ7XG4gIGJvcmRlci1yYWRpdXM6IDNweDtcbiAgY3Vyc29yOiBwb2ludGVyO1xuICB0cmFuc2l0aW9uOiBhbGwgMC4xNXMgZWFzZS1pbi1vdXQ7XG4gIHVzZXItc2VsZWN0OiBub25lO1xufVxuXG4uYnV0dG9uLS1sYXJnZSB7XG4gIHBhZGRpbmc6IDEwcHggMjBweDtcbiAgZm9udC1zaXplOiAxNnB4O1xufVxuXG4uYnV0dG9uOmhvdmVyIHtcbiAgYmFja2dyb3VuZDogIzIxNWVjNTtcbn1cblxuLmJ1dHRvbi0tZGFyayB7XG4gIGJhY2tncm91bmQ6ICMzMDQzNjY7XG59XG5cbi5idXR0b24tLWRhcms6aG92ZXIge1xuICBiYWNrZ3JvdW5kOiAjMTkyMjM0O1xufVxuXG4uYnV0dG9uLS1kYW5nZXIge1xuICBiYWNrZ3JvdW5kOiAjZTkxZTYzO1xufVxuXG4uYnV0dG9uLS1kYW5nZXI6aG92ZXIge1xuICBiYWNrZ3JvdW5kOiAjY2QxYzU4O1xufVxuXG4vKiBIZXJvIEJhbm5lciAqL1xuLmhlcm8ge1xuICBkaXNwbGF5OiBmbGV4O1xuICBmbGV4LWRpcmVjdGlvbjogY29sdW1uO1xuICBqdXN0aWZ5LWNvbnRlbnQ6IGNlbnRlcjtcbiAgYWxpZ24taXRlbXM6IGNlbnRlcjtcbiAgYmFja2dyb3VuZDogbGluZWFyLWdyYWRpZW50KDMzNWRlZywgIzMwNzlmZiwgIzMwYmNmZik7XG4gIG1pbi1oZWlnaHQ6IDMwMHB4O1xuICBjb2xvcjogd2hpdGU7XG59XG5cbi5oZXJvX190aXRsZSB7XG4gIGZvbnQtd2VpZ2h0OiBib2xkO1xuICBmb250LXNpemU6IDQwcHg7XG59XG5cbi5oZXJvX19kZXNjcmlwdGlvbiB7XG4gIGZvbnQtc2l6ZTogMThweDtcbn1cblxuLmhlcm9fX2J1dHRvbiB7XG4gIGRpc3BsYXk6IGZsZXg7XG4gIG1hcmdpbi10b3A6IDE2cHg7XG59XG5cbi8qIE5hdmlnYXRpb24gKi9cbi5uYXYgbGkge1xuICBtYXJnaW46IDAgNXB4O1xufVxuXG4ubmF2X19pdGVtIHtcbiAgY29sb3I6IGJsYWNrO1xuICBwYWRkaW5nOiAxMHB4O1xuICB0ZXh0LWRlY29yYXRpb246IG5vbmU7XG4gIGJvcmRlci1yYWRpdXM6IDNweDtcbiAgdHJhbnNpdGlvbjogYWxsIDAuMTVzIGVhc2UtaW4tb3V0O1xufVxuXG4ubmF2X19pdGVtLS1hY3RpdmUge1xuICBiYWNrZ3JvdW5kOiAjZjZmNmY5O1xufVxuXG4ubmF2X19pdGVtOmhvdmVyIHtcbiAgYmFja2dyb3VuZDogI2Y2ZjZmOTtcbn1cblxuLyogTE9HTyAqL1xuLmxvZ28tbGluayB7XG4gIHRleHQtZGVjb3JhdGlvbjogbm9uZTtcbn1cblxuLmxvZ28ge1xuICBkaXNwbGF5OiBmbGV4O1xuICBhbGlnbi1pdGVtczogY2VudGVyO1xufVxuXG4ubG9nb19faW1hZ2Uge1xuICBtYXgtd2lkdGg6IDQwcHg7XG4gIGhlaWdodDogYXV0bztcbiAgbWFyZ2luLXJpZ2h0OiAxMHB4O1xufVxuXG4ubG9nb19fbmFtZSB7XG4gIGNvbG9yOiAjMjk3OWZmO1xuICBmb250LXdlaWdodDogYm9sZDtcbn1cblxuLyogRk9PVEVSICovXG5mb290ZXIge1xuICBjb2xvcjogd2hpdGU7XG4gIGJhY2tncm91bmQ6ICMxOTIyMzQ7XG59XG5cbi5mb290ZXIgLmNvbnRhaW5lciB7XG4gIHBhZGRpbmc6IDUwcHggMDtcbn1cblxuLmZvb3RlciAubG9nbyB7XG4gIG1hcmdpbi1ib3R0b206IDMwcHg7XG59XG5cbi5mb290ZXJfX2xpc3QgbGkge1xuICBkaXNwbGF5OiBibG9jaztcbn1cblxuLmZvb3Rlcl9fbGlzdCBsaSBhIHtcbiAgY29sb3I6IHdoaXRlO1xuICB0ZXh0LWRlY29yYXRpb246IG5vbmU7XG59XG5cbi5mb290ZXJfX2xpc3QgbGkgYTpob3ZlciB7XG4gIHRleHQtZGVjb3JhdGlvbjogdW5kZXJsaW5lO1xufVxuXG4vKiBHUklEICovXG4uZ3JpZCB7XG4gIGRpc3BsYXk6IGdyaWQ7XG4gIGdyaWQtdGVtcGxhdGUtY29sdW1uczogcmVwZWF0KDQsIDFmcik7XG4gIGdyaWQtY29sdW1uLWdhcDogMjBweDtcbiAgZ3JpZC1yb3ctZ2FwOiAyMHB4O1xufVxuXG4uZ3JpZC0tbm8tc3BhY2luZyB7XG4gIGdyaWQtY29sdW1uLWdhcDogMHB4O1xuICBncmlkLXJvdy1nYXA6IDBweDtcbn1cblxuLmdyaWQtLWNvbHVtbnMtNCB7XG4gIGdyaWQtdGVtcGxhdGUtY29sdW1uczogcmVwZWF0KDQsIDFmcik7XG59XG5cbi5ncmlkLS1jb2x1bW5zLTMge1xuICBncmlkLXRlbXBsYXRlLWNvbHVtbnM6IHJlcGVhdCgzLCAxZnIpO1xufVxuXG4uZ3JpZC0tY29sdW1ucy0yIHtcbiAgZ3JpZC10ZW1wbGF0ZS1jb2x1bW5zOiByZXBlYXQoMiwgMWZyKTtcbn1cblxuLyogQ09OVEVOVCAqL1xuLmNvbnRlbnQge1xuICBtaW4taGVpZ2h0OiA2MDBweDtcbn1cblxuLmNvbnRlbnQgLmNvbnRhaW5lciB7XG4gIG1pbi1oZWlnaHQ6IDMwMHB4O1xuICBwYWRkaW5nOiA1MHB4IDAgMTIwcHggMDtcbn1cblxuLyogQ0FSRCBMSVNUSU5HICovXG4uY2FyZC1saXN0aW5nIHtcbn1cblxuLmNhcmQtbGlzdGluZ19fYWN0aW9ucyB7XG4gIGRpc3BsYXk6IGZsZXg7XG4gIGZsZXgtZGlyZWN0aW9uOiByb3c7XG4gIGp1c3RpZnktY29udGVudDogZmxleC1lbmQ7XG4gIG1hcmdpbi10b3A6IDMwcHg7XG59XG5cbi5jYXJkLWxpc3RpbmdfX2luZm8ge1xuICBtYXJnaW4tYm90dG9tOiAxNnB4O1xuICBmb250LXNpemU6IDE2cHg7XG4gIGNvbG9yOiAjODc4Nzg3O1xuICBmb250LXdlaWdodDogNTAwO1xufVxuXG4vKiBIRUxQRVIgKi9cbi5tci0xMCB7XG4gIG1hcmdpbi1yaWdodDogMTBweDtcbn1cblxuLm1sLTEwIHtcbiAgbWFyZ2luLWxlZnQ6IDEwcHg7XG59XG5cbi8qIFVTRVIgQ09OVEFJTkVSICovXG4udXNlci1jb250YWluZXIge1xuICBkaXNwbGF5OiBmbGV4O1xuICBhbGlnbi1pdGVtczogY2VudGVyO1xufVxuXG4udXNlci1kZXRhaWxzIHtcbiAgbWFyZ2luLXJpZ2h0OiAxNnB4O1xuICB0ZXh0LWFsaWduOiByaWdodDtcbn1cblxuLnVzZXItbmFtZSB7XG4gIGxpbmUtaGVpZ2h0OiAxNnB4O1xuICBmb250LXdlaWdodDogNTAwO1xuICBjb2xvcjogIzI5NzlmZjtcbn1cblxuLnVzZXItZW1haWwge1xuICBmb250LXNpemU6IDE0cHg7XG59XG5cbi8qIFVTRVIgV0VMQ09NRSAqL1xuLndlbGNvbWUtdXNlciB7XG4gIGZvbnQtc2l6ZTogMjJweDtcbiAgZm9udC13ZWlnaHQ6IGJvbGQ7XG4gIGNvbG9yOiAjMjk3OWZmO1xuICBtYXJnaW4tYm90dG9tOiAzMHB4O1xufVxuIl0sInNvdXJjZVJvb3QiOiIifQ== */
+    </style>
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root">
+      <div class="App">
+        <div>
+          <header style="display: flex; justify-content: space-between">
+            <div class="logo">
+              <img
+                class="logo__image"
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/2300px-React-icon.svg.png"
+                alt="Logo"
+              />
+              <div class="logo__name">Logo</div>
+            </div>
+            <ul class="nav">
+              <li><a class="nav__item nav__item--active" href="/">Home</a></li>
+              <li><a class="nav__item false" href="/about">About</a></li>
+              <li><a class="nav__item false" href="/blog">Blog</a></li>
+              <li><a class="nav__item false" href="/contact">Contact</a></li>
+            </ul>
+            <div class="user-container">
+              <div class="user-details">
+                <div class="user-name">Max Mustermann</div>
+                <div class="user-email">max@mustermann.de</div>
+              </div>
+              <div class="button button--default button--default undefined">
+                Logout
+              </div>
+            </div>
+          </header>
+          <div class="content">
+            <div class="content">
+              <div class="hero">
+                <div class="hero__title">Click Counter</div>
+                <div class="hero__description">
+                  You clicked the button 8 times.
+                </div>
+                <div class="hero__button">
+                  <div class="button button--large button--dark undefined">
+                    Click me!
+                  </div>
+                  <div class="button button--large button--dark ml-10">
+                    Reset
+                  </div>
+                </div>
+              </div>
+              <div class="container">
+                <div class="welcome-user">Welcome, Max Mustermann!</div>
+                <div class="card-listing">
+                  <div class="card-listing__info">6 images found</div>
+                  <div class="cards grid grid--columns-3">
+                    <div class="card">
+                      <div class="card__header">
+                        <div class="card__title">Image Card 1</div>
+                        <div class="card__description">
+                          Lorem Ipsum Dolor Sit Amet.
+                        </div>
+                      </div>
+                      <div class="imageContainer">
+                        <img
+                          alt="Random Lorem Picsum"
+                          src="https://picsum.photos/400?random=767"
+                        />
+                      </div>
+                      <div class="card__actions">
+                        <div
+                          class="button button--default button--danger mr-10"
+                        >
+                          Delete
+                        </div>
+                        <div
+                          class="button button--default button--default undefined"
+                        >
+                          Refresh
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card">
+                      <div class="card__header">
+                        <div class="card__title">Image Card 2</div>
+                        <div class="card__description">
+                          Lorem Ipsum Dolor Sit Amet.
+                        </div>
+                      </div>
+                      <div class="imageContainer">
+                        <img
+                          alt="Random Lorem Picsum"
+                          src="https://picsum.photos/400?random=364"
+                        />
+                      </div>
+                      <div class="card__actions">
+                        <div
+                          class="button button--default button--danger mr-10"
+                        >
+                          Delete
+                        </div>
+                        <div
+                          class="button button--default button--default undefined"
+                        >
+                          Refresh
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card">
+                      <div class="card__header">
+                        <div class="card__title">Image Card 3</div>
+                        <div class="card__description">
+                          Lorem Ipsum Dolor Sit Amet.
+                        </div>
+                      </div>
+                      <div class="imageContainer">
+                        <img
+                          alt="Random Lorem Picsum"
+                          src="https://picsum.photos/400?random=366"
+                        />
+                      </div>
+                      <div class="card__actions">
+                        <div
+                          class="button button--default button--danger mr-10"
+                        >
+                          Delete
+                        </div>
+                        <div
+                          class="button button--default button--default undefined"
+                        >
+                          Refresh
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card">
+                      <div class="card__header">
+                        <div class="card__title">Image Card 4</div>
+                        <div class="card__description">
+                          Lorem Ipsum Dolor Sit Amet.
+                        </div>
+                      </div>
+                      <div class="imageContainer">
+                        <img
+                          alt="Random Lorem Picsum"
+                          src="https://picsum.photos/400?random=827"
+                        />
+                      </div>
+                      <div class="card__actions">
+                        <div
+                          class="button button--default button--danger mr-10"
+                        >
+                          Delete
+                        </div>
+                        <div
+                          class="button button--default button--default undefined"
+                        >
+                          Refresh
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card">
+                      <div class="card__header">
+                        <div class="card__title">Image Card 5</div>
+                        <div class="card__description">
+                          Lorem Ipsum Dolor Sit Amet.
+                        </div>
+                      </div>
+                      <div class="imageContainer">
+                        <img
+                          alt="Random Lorem Picsum"
+                          src="https://picsum.photos/400?random=760"
+                        />
+                      </div>
+                      <div class="card__actions">
+                        <div
+                          class="button button--default button--danger mr-10"
+                        >
+                          Delete
+                        </div>
+                        <div
+                          class="button button--default button--default undefined"
+                        >
+                          Refresh
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card">
+                      <div class="card__header">
+                        <div class="card__title">Image Card 6</div>
+                        <div class="card__description">
+                          Lorem Ipsum Dolor Sit Amet.
+                        </div>
+                      </div>
+                      <div class="imageContainer">
+                        <img
+                          alt="Random Lorem Picsum"
+                          src="https://picsum.photos/400?random=720"
+                        />
+                      </div>
+                      <div class="card__actions">
+                        <div
+                          class="button button--default button--danger mr-10"
+                        >
+                          Delete
+                        </div>
+                        <div
+                          class="button button--default button--default undefined"
+                        >
+                          Refresh
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card-listing__actions">
+                    <div
+                      class="button button--default button--default undefined"
+                    >
+                      Add Card
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <footer class="footer">
+            <div class="container grid grid--columns-3">
+              <div class="x">
+                <div class="logo">
+                  <img
+                    class="logo__image"
+                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/2300px-React-icon.svg.png"
+                    alt="Logo"
+                  />
+                  <div class="logo__name">Logo</div>
+                </div>
+                <ul class="footer__list">
+                  <li><a href="/">Home</a></li>
+                  <li><a href="/">About</a></li>
+                  <li><a href="/">Blog</a></li>
+                  <li><a href="/">Contact</a></li>
+                  <li><a href="/">Privacy</a></li>
+                </ul>
+              </div>
+              <ul class="footer__list">
+                <li><a href="/">Home</a></li>
+                <li><a href="/">About</a></li>
+                <li><a href="/">Blog</a></li>
+                <li><a href="/">Contact</a></li>
+                <li><a href="/">Privacy</a></li>
+              </ul>
+              <ul class="footer__list">
+                <li><a href="/">Home</a></li>
+                <li><a href="/">About</a></li>
+                <li><a href="/">Blog</a></li>
+                <li><a href="/">Contact</a></li>
+                <li><a href="/">Privacy</a></li>
+              </ul>
+            </div>
+          </footer>
+        </div>
+      </div>
+    </div>
+    <!--
+      This HTML file is a template.
+      If you open it directly in the browser, you will see an empty page.
+
+      You can add webfonts, meta tags, or analytics to this file.
+      The build step will place the bundled scripts into the <body> tag.
+
+      To begin the development, run `npm start` or `yarn start`.
+      To create a production bundle, use `npm run build` or `yarn build`.
+    -->
+  </body>
+</html>
