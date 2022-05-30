@@ -51,6 +51,11 @@ function Content() {
     ]);
   };
 
+  const deleteCard = (cardId) => {
+    const filteredCards = cards.filter((card) => card.id !== cardId);
+    setCards(filteredCards);
+  };
+
   return (
     <div className="content">
       <Hero
@@ -71,6 +76,7 @@ function Content() {
                 buttonText={card.buttonText}
                 title={`${card.title} ${idx + 1}`}
                 description={card.description}
+                onDelete={() => deleteCard(card.id)}
               />
             ))}
           </div>

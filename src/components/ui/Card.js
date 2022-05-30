@@ -26,6 +26,9 @@ function Card(props) {
         <img src={imageUrl} alt="Random Lorem Picsum" />
       </div>
       <div className="card__actions">
+        <Button className="mr-10" variant="danger" onClick={onDelete}>
+          Delete
+        </Button>
         <Button onClick={updateImage}>{buttonText}</Button>
       </div>
     </div>
