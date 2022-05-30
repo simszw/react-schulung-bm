@@ -1,11 +1,17 @@
 import { useState } from "react";
 import Button from "../ui/Button";
 
+const MAX_COUNT = 10;
+
 function Hero(props) {
   const { title, description, buttonText } = props;
   const [counter, setCounter] = useState(0);
 
   const updateCounter = () => {
+    if (counter === MAX_COUNT) {
+      alert(`This counter can only count till ${MAX_COUNT}`);
+      return;
+    }
     setCounter(counter + 1);
   };
 
