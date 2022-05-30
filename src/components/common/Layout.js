@@ -1,4 +1,5 @@
 import Content from "./Content";
+import Footer from "./Footer";
 import Header from "./Header";
 
 function Layout() {
@@ -6,7 +7,7 @@ function Layout() {
     <div>
       <Header />
       <Content />
-      <p>Footer</p>
+      <Footer />
     </div>
   );
 }
