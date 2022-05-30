@@ -69,17 +69,24 @@ function Content() {
           <div className="card-listing__info">
             {cards.length} {cards.length === 1 ? "image" : "images"} found
           </div>
-          <div className="cards grid grid--columns-3">
-            {cards.map((card, idx) => (
-              <Card
-                key={card.id}
-                buttonText={card.buttonText}
-                title={`${card.title} ${idx + 1}`}
-                description={card.description}
-                onDelete={() => deleteCard(card.id)}
-              />
-            ))}
-          </div>
+          {cards.length > 0 ? (
+            <div className="cards grid grid--columns-3">
+              {cards.map((card, idx) => (
+                <Card
+                  key={card.id}
+                  buttonText={card.buttonText}
+                  title={`${card.title} ${idx + 1}`}
+                  description={card.description}
+                  onDelete={() => deleteCard(card.id)}
+                />
+              ))}
+            </div>
+          ) : (
+            <div>
+              <h1>No Cards</h1>
+              <p>Lorem Ipsum Dolor Sit Amet.</p>
+            </div>
+          )}
           <div className="card-listing__actions">
             <Button onClick={addCard}>Add Card</Button>
           </div>
