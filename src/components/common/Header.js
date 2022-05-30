@@ -1,3 +1,4 @@
+import Button from "../ui/Button";
 import Logo from "./Logo";
 import Navigation from "./Navigation";
 
@@ -6,7 +7,7 @@ function Header() {
     <header style={{ display: "flex", justifyContent: "space-between" }}>
       <Logo />
       <Navigation />
-      <p>Button</p>
+      <Button />
     </header>
   );
 }
