@@ -4,6 +4,8 @@ import Button from "../ui/Button";
 import Card from "../ui/Card";
 import Hero from "./Hero";
 
+const MAX_CARDS = 6;
+
 const INITIAL_CARDS = [
   {
     id: 0,
@@ -32,6 +34,11 @@ function Content() {
   const [cards, setCards] = useState(INITIAL_CARDS);
 
   const addCard = () => {
+    if (cards.length === MAX_CARDS) {
+      alert(`You can only add ${MAX_CARDS} cards.`);
+      return;
+    }
+
     setCards([
       ...cards,
       {
