@@ -1,7 +1,21 @@
+import { useEffect, useState } from "react";
 import Button from "./Button";
+import { getRandomImageUrl } from "../../utils/ImageHelper";
 
 function Card(props) {
-  const { buttonText, title, description } = props;
+  const { title, description, buttonText, url, onDelete } = props;
+  const [imageUrl, setImageUrl] = useState(url || null);
+
+  useEffect(() => {
+    if (!url) {
+      updateImage();
+    }
+  }, []);
+
+  const updateImage = () => {
+    setImageUrl(getRandomImageUrl());
+  };
+
   return (
     <div className="card">
       <div className="card__header">
@@ -9,13 +23,10 @@ function Card(props) {
         <div className="card__description">{description}</div>
       </div>
       <div className="imageContainer">
-        <img
-          src="https://picsum.photos/400?random=1"
-          alt="Random Lorem Picsum"
-        />
+        <img src={imageUrl} alt="Random Lorem Picsum" />
       </div>
       <div className="card__actions">
-        <Button>{buttonText}</Button>
+        <Button onClick={updateImage}>{buttonText}</Button>
       </div>
     </div>
   );
