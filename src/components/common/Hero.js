@@ -9,6 +9,10 @@ function Hero(props) {
     setCounter(counter + 1);
   };
 
+  const resetCounter = () => {
+    setCounter(0);
+  };
+
   return (
     <div className="hero">
       <div className="hero__title">{title}</div>
@@ -23,6 +27,16 @@ function Hero(props) {
         <Button size="large" variant="dark" onClick={updateCounter}>
           {buttonText}
         </Button>
+        {counter > 0 && (
+          <Button
+            className="ml-10"
+            variant="dark"
+            size="large"
+            onClick={resetCounter}
+          >
+            Reset
+          </Button>
+        )}
       </div>
     </div>
   );
