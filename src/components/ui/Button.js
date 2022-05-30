@@ -1,6 +1,18 @@
-function Button() {
+function Button(props) {
+  const {
+    children,
+    className,
+    onClick,
+    size = "default",
+    variant = "default",
+  } = props;
   return (
-    <div className={`button button--default button--default`}>Click me</div>
+    <div
+      className={`button button--${size} button--${variant} ${className}`}
+      onClick={onClick}
+    >
+      {children}
+    </div>
   );
 }
 
