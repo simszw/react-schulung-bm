@@ -1,10 +1,11 @@
+import Content from "./Content";
 import Header from "./Header";
 
 function Layout() {
   return (
     <div>
       <Header />
-      <p>Content</p>
+      <Content />
       <p>Footer</p>
     </div>
   );
