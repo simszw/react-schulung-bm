@@ -1,3 +1,5 @@
+import Button from "./Button";
+
 function Card() {
   return (
     <div className="card">
@@ -12,7 +14,7 @@ function Card() {
         />
       </div>
       <div className="card__actions">
-        <p>Button</p>
+        <Button />
       </div>
     </div>
   );

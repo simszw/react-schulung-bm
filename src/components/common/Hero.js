@@ -1,3 +1,5 @@
+import Button from "../ui/Button";
+
 function Hero() {
   return (
     <div className="hero">
@@ -6,7 +8,7 @@ function Hero() {
         Click the button to count the clicks.
       </div>
       <div className="hero__button">
-        <p>Button</p>
+        <Button />
       </div>
     </div>
   );

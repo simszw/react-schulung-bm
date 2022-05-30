@@ -1,3 +1,4 @@
+import Button from "../ui/Button";
 import Card from "../ui/Card";
 import Hero from "./Hero";
 
@@ -14,7 +15,7 @@ function Content() {
             <Card />
           </div>
           <div className="card-listing__actions">
-            <p>Button "Add Card"</p>
+            <Button />
           </div>
         </div>
       </div>
